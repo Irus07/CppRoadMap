@@ -19,6 +19,7 @@ flowchart TD
         A1["Стек vs Куча (Без GC)"] --> A2["Концепция RAII"]
         A2 --> A3["Value Semantics по умолчанию"]
         A3 --> A4["Топ-10 ловушек C# -> C++"]
+        A4 --> A5["Стиль кода и Naming Conventions"]
     end
 
     Phase1 --> Phase2
@@ -91,6 +92,7 @@ flowchart TD
 | **01. Mental Shift** | [01. Память без GC и RAII](01-mental-shift/01-memory-and-raii.md) | Стек vs Куча, детерминированные деструкторы, аналог `IDisposable` |
 | | [02. Value Semantics vs Ссылки](01-mental-shift/02-value-vs-reference.md) | Копирование по умолчанию, ссылки `&`, `const &`, висячие ссылки |
 | | [03. Топ-10 подводных камней](01-mental-shift/03-pitfalls-cs-to-cpp.md) | Ловушки `new`, `struct` vs `class`, срезка объектов, мусор в памяти |
+| | [04. Правила именования и стиль](01-mental-shift/04-naming-conventions-and-style.md) | Запрещенные имена (`_Name`, `__`), стиль Google, суффикс `name_` |
 | **02. Modern Core** | [01. Умные указатели](02-modern-cpp-core/01-smart-pointers.md) | `unique_ptr`, `shared_ptr`, `weak_ptr`, циклические зависимости |
 | | [02. Ссылки, const и constexpr](02-modern-cpp-core/02-references-and-const.md) | `const`-методы, правило чтения указателей, compile-time вычисления |
 | | [03. Move-семантика и Rule of 5](02-modern-cpp-core/03-move-semantics-and-rule-of-5.md) | Lvalue/Rvalue, `&&`, `std::move`, Rule of 0/3/5, `noexcept` |
