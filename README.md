@@ -39,7 +39,7 @@ flowchart TD
     Phase3 --> Phase4
 
     subgraph Phase4["Этап 4: Базовое ООП и Объектная модель"]
-        D1["Классы, структуры, : public"] --> D2["Список инициализации и const-методы"]
+        D1["Классы, структуры, методы"] --> D2["Деструкторы (LIFO, noexcept)"]
         D2 --> D3["virtual, override и = 0"]
         D3 --> D4["Перегрузка операторов (==, cout, +)"]
         D4 --> D5["vtable под капотом и ромбовидность"]
@@ -98,10 +98,11 @@ flowchart TD
 | | [02. Алгоритмы и Лямбды](03-stl-and-standard-library/02-algorithms-and-lambdas.md) | Итераторы, списки захвата `[&]`, `[=]`, `<algorithm>` |
 | | [03. C++20 Ranges vs C# LINQ](03-stl-and-standard-library/03-ranges-vs-linq.md) | Оператор `\|`, `views::filter`, `views::transform`, 0-cost абстракции |
 | **04. Object Model & OOP**| [00. Классы и методы (без зауми)](04-object-model-and-oop/00-classes-and-methods-basics.md) | Синтаксис класса, `;` на конце, список инициализации, `const`-методы |
-| | [01. Наследование и override](04-object-model-and-oop/01-inheritance-and-override-basics.md) | `: public`, вызов базового конструктора, `virtual`, `override`, `= 0` |
-| | [02. Перегрузка операторов](04-object-model-and-oop/02-operator-overloading-basics.md) | Вывод в `std::cout <<`, `operator==`, `operator+`, Spaceship `<=>` |
-| | [03. Полиморфизм и vtable](04-object-model-and-oop/03-polymorphism-and-vtable.md) | Устройство памяти объекта, `vptr`, виртуальные деструкторы |
-| | [04. Множественное наследование](04-object-model-and-oop/04-multiple-inheritance.md) | Интерфейсы в C++, ромбовидное наследование, `dynamic_cast` |
+| | [01. Деструкторы от А до Я](04-object-model-and-oop/01-destructors-guide.md) | Детерминированность, порядок LIFO, виртуальный деструктор, `noexcept` |
+| | [02. Наследование и override](04-object-model-and-oop/02-inheritance-and-override-basics.md) | `: public`, вызов базового конструктора, `virtual`, `override`, `= 0` |
+| | [03. Перегрузка операторов](04-object-model-and-oop/03-operator-overloading-basics.md) | Вывод в `std::cout <<`, `operator==`, `operator+`, Spaceship `<=>` |
+| | [04. Полиморфизм и vtable](04-object-model-and-oop/04-polymorphism-and-vtable.md) | Устройство памяти объекта, `vptr`, вызовы функций под капотом |
+| | [05. Множественное наследование](04-object-model-and-oop/05-multiple-inheritance.md) | Интерфейсы в C++, ромбовидное наследование, `dynamic_cast` |
 | **05. Templates** | [01. Шаблоны vs Дженерики](05-templates-and-generics/01-templates-vs-generics.md) | Кодогенерация vs IL, специализация, почему шаблоны пишут в `.hpp` |
 | | [02. C++20 Концепты](05-templates-and-generics/02-concepts-and-constexpr.md) | Ограничения `requires` vs `where T : ...`, `if constexpr` |
 | **06. Concurrency** | [01. Потоки и Атомики](06-concurrency-and-systems/01-threads-and-atomics.md) | `std::jthread`, `std::scoped_lock`, атомики, Data Race = UB |
