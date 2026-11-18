@@ -60,9 +60,22 @@ flowchart TD
 
     Phase6 --> Phase7
 
-    subgraph Phase7["Этап 7: Экосистема и Практика"]
+    subgraph Phase7["Этап 7: Экосистема и Tooling"]
         G1["Modern CMake и vcpkg"] --> G2["Санитайзеры (ASan, UBSan)"]
-        G2 --> G3["🎯 4 Практических проекта"]
+        G2 --> G3["Visual Studio: Сниппеты и хоткеи"]
+    end
+
+    Phase7 --> Phase8
+
+    subgraph Phase8["Этап 8: Структура проекта (Кейс: Сапёр)"]
+        H1["Заголовки .hpp vs Исходники .cpp"] --> H2["#pragma once и ODR"]
+        H2 --> H3["🎮 Практическая декомпозиция Сапёра"]
+    end
+
+    Phase8 --> Phase9
+
+    subgraph Phase9["Этап 9: Практические проекты"]
+        I1["🎯 4 Milestone-проекта"]
     end
 ```
 
@@ -91,7 +104,12 @@ flowchart TD
 | | [02. Корутины vs Async/Await](06-concurrency-and-systems/02-coroutines-vs-async.md) | `co_await`, `co_yield`, stackless state machine, `std::generator` |
 | **07. Tooling** | [01. Руководство по CMake](07-tooling-and-ecosystem/01-cmake-guide.md) | Target-based CMake, `CMakeLists.txt`, команды сборки |
 | | [02. Санитайзеры и vcpkg](07-tooling-and-ecosystem/02-sanitizers-and-debug.md) | AddressSanitizer (ASan), UBSan, пакетный менеджер vcpkg |
-| **08. Projects** | [🎯 4 Практических проекта](08-practice-projects/projects-guide.md) | Свой Vector, Zero-Copy парсер логов, Thread Pool, Mini-Redis |
+| | [03. Сниппеты и хоткеи VS](07-tooling-and-ecosystem/03-visual-studio-snippets-and-tricks.md) | `Alt+O`, `Surround with`, свои XML-сниппеты, генерация методов |
+| **08. Structure & Headers** | [01. Разделение на .hpp и .cpp](09-project-structure-and-headers/01-headers-vs-sources-guide.md) | `#pragma once`, почему нельзя тело в .h, Forward Declaration |
+| | [02. Архитектура Сапёра](09-project-structure-and-headers/02-minesweeper-architecture.md) | Декомпозиция: Cell, Board, Game, чистая архитектура без спагетти |
+| | [03. Пошаговый разбор кода](09-project-structure-and-headers/03-minesweeper-code-walkthrough.md) | 1D-вектор вместо 2D, Flood-Fill очередь, безопасный первый ход |
+| | [🎮 Исходный код Сапёра](examples/minesweeper/) | Готовый модульный проект на C++20 с `CMakeLists.txt` |
+| **09. Projects** | [🎯 4 Практических проекта](08-practice-projects/projects-guide.md) | Свой Vector, Zero-Copy парсер логов, Thread Pool, Mini-Redis |
 
 ---
 
