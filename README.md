@@ -38,10 +38,11 @@ flowchart TD
 
     Phase3 --> Phase4
 
-    subgraph Phase4["Этап 4: Объектная модель и Полиморфизм"]
-        D1["vtable и указатель vptr"] --> D2["override, final, = 0"]
-        D2 --> D3["Виртуальный деструктор"]
-        D3 --> D4["Множественное наследование и интерфейсы"]
+    subgraph Phase4["Этап 4: Базовое ООП и Объектная модель"]
+        D1["Классы, структуры, : public"] --> D2["Список инициализации и const-методы"]
+        D2 --> D3["virtual, override и = 0"]
+        D3 --> D4["Перегрузка операторов (==, cout, +)"]
+        D4 --> D5["vtable под капотом и ромбовидность"]
     end
 
     Phase4 --> Phase5
@@ -96,8 +97,11 @@ flowchart TD
 | **03. STL & Ranges**| [01. Контейнеры STL](03-stl-and-standard-library/01-containers.md) | `vector` deep-dive, SSO в строках, `string_view`, `span` |
 | | [02. Алгоритмы и Лямбды](03-stl-and-standard-library/02-algorithms-and-lambdas.md) | Итераторы, списки захвата `[&]`, `[=]`, `<algorithm>` |
 | | [03. C++20 Ranges vs C# LINQ](03-stl-and-standard-library/03-ranges-vs-linq.md) | Оператор `\|`, `views::filter`, `views::transform`, 0-cost абстракции |
-| **04. Object Model**| [01. Полиморфизм и vtable](04-object-model-and-oop/01-polymorphism-and-vtable.md) | Устройство памяти объекта, `vptr`, виртуальные деструкторы |
-| | [02. Множественное наследование](04-object-model-and-oop/02-multiple-inheritance.md) | Интерфейсы в C++, ромбовидное наследование, `dynamic_cast` |
+| **04. Object Model & OOP**| [00. Классы и методы (без зауми)](04-object-model-and-oop/00-classes-and-methods-basics.md) | Синтаксис класса, `;` на конце, список инициализации, `const`-методы |
+| | [01. Наследование и override](04-object-model-and-oop/01-inheritance-and-override-basics.md) | `: public`, вызов базового конструктора, `virtual`, `override`, `= 0` |
+| | [02. Перегрузка операторов](04-object-model-and-oop/02-operator-overloading-basics.md) | Вывод в `std::cout <<`, `operator==`, `operator+`, Spaceship `<=>` |
+| | [03. Полиморфизм и vtable](04-object-model-and-oop/03-polymorphism-and-vtable.md) | Устройство памяти объекта, `vptr`, виртуальные деструкторы |
+| | [04. Множественное наследование](04-object-model-and-oop/04-multiple-inheritance.md) | Интерфейсы в C++, ромбовидное наследование, `dynamic_cast` |
 | **05. Templates** | [01. Шаблоны vs Дженерики](05-templates-and-generics/01-templates-vs-generics.md) | Кодогенерация vs IL, специализация, почему шаблоны пишут в `.hpp` |
 | | [02. C++20 Концепты](05-templates-and-generics/02-concepts-and-constexpr.md) | Ограничения `requires` vs `where T : ...`, `if constexpr` |
 | **06. Concurrency** | [01. Потоки и Атомики](06-concurrency-and-systems/01-threads-and-atomics.md) | `std::jthread`, `std::scoped_lock`, атомики, Data Race = UB |
